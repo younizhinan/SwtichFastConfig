@@ -5,7 +5,7 @@ import time
 from _datetime import datetime
 import sys
 
-port_list = list(serial.tools.list_ports.comports())  # 获取当前可用串口列表123123123123
+port_list = list(serial.tools.list_ports.comports())  # 获取当前可用串口列表
 now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 filename = ".\\Logs\\" + now + ".txt"
 Logfile = open(filename, 'w', encoding="gbk")
