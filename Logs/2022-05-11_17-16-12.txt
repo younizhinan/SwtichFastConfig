@@ -1,0 +1,724 @@
+2022/05/11 17:16:12 Serial can be used:
+2022/05/11 17:16:12 COM8 - USB Serial Port (COM8) .......... 1
+2022/05/11 17:16:12 COM1 - ELTIMA Virtual Serial Port (COM1->COM3) .......... 2
+2022/05/11 17:16:12 COM3 - ELTIMA Virtual Serial Port (COM3->COM1) .......... 3
+2022/05/11 17:16:14 Option 1 has been chosen
+2022/05/11 17:16:14 Serial detailed parameters:
+2022/05/11 17:16:14 Serial<id=0x1be16f5f4c0, open=True>(port='COM8 ', baudrate=9600, bytesize=8, parity='N', stopbits=1, timeout=0.5, xonxoff=False, rtscts=False, dsrdtr=False)
+2022/05/11 17:16:15 -->\n
+2022/05/11 17:16:17 -->\n
+2022/05/11 17:16:20 -->\n
+2022/05/11 17:16:22 -->\n
+2022/05/11 17:16:24 -->\n
+2022/05/11 17:16:26 -->\n
+2022/05/11 17:16:27 -->\n
+2022/05/11 17:16:28 -->\n
+2022/05/11 17:16:30 -->\n
+2022/05/11 17:16:31 -->\n
+2022/05/11 17:16:32 -->\n
+2022/05/11 17:16:33 -->\n
+2022/05/11 17:16:34 -->\n
+2022/05/11 17:16:35 -->\n
+2022/05/11 17:16:36 -->\n
+2022/05/11 17:16:37 -->\n
+2022/05/11 17:16:38 -->\n
+2022/05/11 17:16:39 -->\n
+2022/05/11 17:16:40 -->\n
+2022/05/11 17:16:41 -->\n
+2022/05/11 17:16:42 -->\n
+2022/05/11 17:16:43 -->\n
+2022/05/11 17:16:44 -->\n
+2022/05/11 17:16:46 -->\n
+2022/05/11 17:16:47 -->\n
+2022/05/11 17:16:48 -->\n
+2022/05/11 17:16:49 -->\n
+2022/05/11 17:16:55 -->\n
+2022/05/11 17:16:56 -->\n
+2022/05/11 17:16:57 <--ZXAN>
+2022/05/11 17:16:57 -->enable
+2022/05/11 17:16:58 <--ZXAN>
+2022/05/11 17:16:58 -->enable
+2022/05/11 17:16:59 <--Password:
+2022/05/11 17:16:59 -->zxr10
+2022/05/11 17:17:00 <--Password:
+2022/05/11 17:17:00 -->zxr10
+2022/05/11 17:17:01 <--ZXAN#
+2022/05/11 17:17:01 -->config terminal
+2022/05/11 17:17:03 <--ZXAN#
+2022/05/11 17:17:03 -->config terminal
+2022/05/11 17:17:04 Login succeed!
+2022/05/11 17:17:04 -->show card
+2022/05/11 17:17:04 <--
+b'                ^\r\r\n'
+b"%Error 20200: Invalid input detected at '^' marker.Invalid command\r\r\n"
+b'ZXAN(config)#show card\r\r\n'
+2022/05/11 17:17:05 -->show card
+2022/05/11 17:17:05 <--
+2022/05/11 17:17:07 -->show card
+2022/05/11 17:17:07 <--
+2022/05/11 17:17:08 -->show card
+2022/05/11 17:17:08 <--
+2022/05/11 17:17:10 -->show card
+2022/05/11 17:17:10 <--
+2022/05/11 17:17:11 -->show card
+2022/05/11 17:17:11 <--
+2022/05/11 17:17:13 -->show card
+2022/05/11 17:17:13 <--
+2022/05/11 17:17:14 -->show card
+2022/05/11 17:17:14 <--
+2022/05/11 17:17:20 -->show card
+2022/05/11 17:17:20 <--
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:22 -->show card
+2022/05/11 17:17:22 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    SMXA             3             V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:27 -->show card
+2022/05/11 17:17:27 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:30 -->show card
+2022/05/11 17:17:30 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:32 -->show card
+2022/05/11 17:17:32 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:34 -->show card
+2022/05/11 17:17:34 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:37 -->show card
+2022/05/11 17:17:37 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:39 -->show card
+2022/05/11 17:17:39 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:42 -->show card
+2022/05/11 17:17:42 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:44 -->show card
+2022/05/11 17:17:44 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:46 -->show card
+2022/05/11 17:17:46 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:49 -->show card
+2022/05/11 17:17:49 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:53 -->show card
+2022/05/11 17:17:53 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:55 -->show card
+2022/05/11 17:17:55 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:17:58 -->show card
+2022/05/11 17:17:58 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:00 -->show card
+2022/05/11 17:18:00 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:02 -->show card
+2022/05/11 17:18:02 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:05 -->show card
+2022/05/11 17:18:05 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:07 -->show card
+2022/05/11 17:18:07 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:10 -->show card
+2022/05/11 17:18:10 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:12 -->show card
+2022/05/11 17:18:12 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:14 -->show card
+2022/05/11 17:18:14 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:18 -->show card
+2022/05/11 17:18:18 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:21 -->show card
+2022/05/11 17:18:21 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:23 -->show card
+2022/05/11 17:18:23 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:25 -->show card
+2022/05/11 17:18:25 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:28 -->show card
+2022/05/11 17:18:28 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:30 -->show card
+2022/05/11 17:18:30 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:33 -->show card
+2022/05/11 17:18:33 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:35 -->show card
+2022/05/11 17:18:35 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:37 -->show card
+2022/05/11 17:18:37 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:40 -->show card
+2022/05/11 17:18:40 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:53 -->show card
+2022/05/11 17:18:53 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:55 -->show card
+2022/05/11 17:18:55 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:18:58 -->show card
+2022/05/11 17:18:58 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:00 -->show card
+2022/05/11 17:19:00 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:03 -->show card
+2022/05/11 17:19:03 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:05 -->show card
+2022/05/11 17:19:05 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:07 -->show card
+2022/05/11 17:19:07 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:10 -->show card
+2022/05/11 17:19:10 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:12 -->show card
+2022/05/11 17:19:12 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:15 -->show card
+2022/05/11 17:19:15 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:37 -->show card
+2022/05/11 17:19:37 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:40 -->show card
+2022/05/11 17:19:40 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:42 -->show card
+2022/05/11 17:19:42 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:45 -->show card
+2022/05/11 17:19:45 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:47 -->show card
+2022/05/11 17:19:47 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          HWONLINE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:49 -->show card
+2022/05/11 17:19:49 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          HWONLINE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:52 -->show card
+2022/05/11 17:19:52 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:54 -->show card
+2022/05/11 17:19:54 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:57 -->show card
+2022/05/11 17:19:57 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          HWONLINE\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:19:57 CardType is: ['1ETGH', '2ETGO', '3PRAM', '4SMXA']
+2022/05/11 17:19:59 -->show card
+2022/05/11 17:19:59 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:01 -->show card
+2022/05/11 17:20:01 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:04 -->show card
+2022/05/11 17:20:04 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:06 -->show card
+2022/05/11 17:20:06 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:09 -->show card
+2022/05/11 17:20:09 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:11 -->show card
+2022/05/11 17:20:11 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:14 -->show card
+2022/05/11 17:20:14 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:17 -->show card
+2022/05/11 17:20:17 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:19 -->show card
+2022/05/11 17:20:19 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:22 -->show card
+2022/05/11 17:20:22 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          CONFIGING\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:24 -->show card
+2022/05/11 17:20:24 <--
+b'show card\r\r\n'
+b'Rack Shelf Slot CfgType RealType Port  HardVer SoftVer         Status\r\r\n'
+b'-------------------------------------------------------------------------------\r\r\n'
+b'1    1     1    ETGH    ETGHK    16    V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     2    ETGO    ETGOK    8     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'1    1     3    PRAM    PRAM     3     V1.0.0  V1.01           INSERVICE\r\r\n'
+b'1    1     4    SMXA    SMXA     3     V1.0.0  V2.1.0          INSERVICE\r\r\n'
+b'ZXAN(config)#'
+2022/05/11 17:20:24 Card is now in INSERVICE state!
+2022/05/11 17:20:24 -->interface epon-olt_1/1/1
+2022/05/11 17:20:24 -->no shutdown
+2022/05/11 17:20:24 -->exit
+2022/05/11 17:20:24 -->interface epon-olt_1/1/2
+2022/05/11 17:20:24 -->no shutdown
+2022/05/11 17:20:24 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/3
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/4
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/5
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/6
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/7
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/8
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/9
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/10
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/11
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:25 -->interface epon-olt_1/1/12
+2022/05/11 17:20:25 -->no shutdown
+2022/05/11 17:20:25 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/1/13
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/1/14
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/1/15
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/1/16
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/1
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/2
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/3
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/4
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/5
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:26 -->interface epon-olt_1/2/6
+2022/05/11 17:20:26 -->no shutdown
+2022/05/11 17:20:26 -->exit
+2022/05/11 17:20:27 -->interface epon-olt_1/2/7
+2022/05/11 17:20:27 -->no shutdown
+2022/05/11 17:20:27 -->exit
+2022/05/11 17:20:27 -->interface epon-olt_1/2/8
+2022/05/11 17:20:27 -->no shutdown
+2022/05/11 17:20:27 -->exit
+2022/05/11 17:20:29 Manage VLAN is: 41
+2022/05/11 17:20:29 -->vlan 41
+2022/05/11 17:20:29 -->description MNG
+2022/05/11 17:20:29 -->exit
+2022/05/11 17:20:36 -->interface vlan 41
+2022/05/11 17:20:36 -->ip add 192.168.1.1 255.255.255.0
+2022/05/11 17:20:36 -->exit
+2022/05/11 17:20:36 -->service password-encryption
+2022/05/11 17:20:36 -->username wasu password wasu@123 privilege 15
+2022/05/11 17:20:36 -->username wasu password wasu@123 max-sessions 16
+2022/05/11 17:20:36 -->no ssh server only
+2022/05/11 17:20:36 -->ip route 0.0.0.0 0.0.0.0 192.168.1.254
+2022/05/11 17:20:37 -->interface get_1/4/1
+2022/05/11 17:20:37 -->no shutdown
+2022/05/11 17:20:37 -->switchport mode trunk
+2022/05/11 17:20:37 -->switchport vlan 41 tag
+2022/05/11 17:20:37 -->exit
+2022/05/11 17:20:37 -->exit
+2022/05/11 17:20:37 -->write
