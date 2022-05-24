@@ -6,27 +6,37 @@ from _datetime import datetime
 import sys
 
 
-
-
-
+bps = 9600
+timex = 0.5
+count = 0
+SerRead = ''
+PonArr = ['32', '24', '16', '16', '8']  # PON口数量，对应CardList列表
+PonList = ["16", "16"], \
+          ["16", "8"], \
+          ["16"], \
+          ["8", "8"], \
+          ["8"]                         # PON口数量列表，对应CardList列表中的不同型号板卡
+CardList = ["1ETGH", "2ETGH", "3PRAM", "4SMXA"], \
+           ["1ETGH", "2ETGO", "3PRAM", "4SMXA"], \
+           ["1ETGH", "3PRAM", "4SMXA"], \
+           ["1ETGO", "2ETGO", "3PRAM", "4SMXA"], \
+           ["1ETGO", "3PRAM", "4SMXA"]  # 初始化板卡型号列表
+TryTimes = 0
+CardType = ""
+inputdata = ""
 port_list = list(serial.tools.list_ports.comports())  # 获取当前可用串口列表
-# now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-# filename = ".\\Logs\\" + now + ".txt"
-# Logfile = open(filename, 'w', encoding="gbk")
+
 
 class OltSerCon():
 
-    Oltmodel = ''  # olt型号
-    now = ''  # 当前时间
-    filename = ''   # 日志文件名
-
-    def __init__(self, Oltmodel):
+    def __init__(self, Oltmodel:str, Serial:str):
         self.Oltmodel = Oltmodel
+        self.Serial = Serial
         self.now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         self.filename = ".\\Logs\\" + self.now + ".txt"
         self.Logfile = open(self.filename, 'w', encoding="gbk")
 
-    def LogWrite(self, words, endwith):  #向日志文件写入
+    def LogWrite(self, words:str, endwith:str):  #向日志文件写入
         self.now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         self.Logfile.write(str(self.Oltmodel))
         self.Logfile.write("-")
@@ -35,11 +45,18 @@ class OltSerCon():
         self.Logfile.write(str(words))
         self.Logfile.write(str(endwith))
 
-# 向日志文件写入时间戳
-# def LogWriteNow(string):
-#     now = datetime.now().strftime("%Y/%m/%d %H:%M:%S ")
-#     Logfile.write(now)
-#     Logfile.write(str(string))
+    def SerWrite(self, inputdata):  # 向串口写入并计入日志
+        self.inputdata = inputdata
+        self.Serial.write(inputdata.encode("gbk"))
+        self.LogWrite("-->", "\n")
+        self.LogWrite(inputdata, "")
+
+    def ReadFormSerial(self):
+        self.Readstr = self.Serial.readlines(self.Serial.in_waiting)
+        self.LogWrite("<--", "\n")
+        for i in self.Readstr:
+            self.LogWrite(str(i), "\n")
+        return self.Readstr
 
 
 # 判断元素是否在列表中 --> (需要判断的元素, 需要判断的列表)
@@ -92,20 +109,19 @@ def LoopPrintList(InputList):
 
 
 if __name__ == '__main__':
-    OltSerCon = OltSerCon("C320")
     # 选择串口
     print("当前可用串口:")
-    OltSerCon.LogWrite("Serial can be used:", "\n")
     if len(port_list) == 0:
         print("无可用串口")
         # Log
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
         OltSerCon.LogWrite("There is no Serial can be used.", "\n")
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
     else:
         for i in range(0, len(port_list)):
             print(port_list[i], " .......... ", i + 1)
             # Log
             LogInput = str(port_list[i]) + " .......... " + str(i + 1)
-            OltSerCon.LogWrite(LogInput, "\n")
     print("请选择串口:")
     SelectSerial = input()
     # 选择串口
@@ -115,59 +131,42 @@ if __name__ == '__main__':
         SelectSerial = input()
     try:
         portx = str(port_list[int(SelectSerial) - 1])
-        bps = 9600
-        timex = 0.5
-        ser = serial.Serial(portx[0:5], bps, timeout=timex)
+        ZTEser = serial.Serial(portx[0:5], bps, timeout=timex)
+        OltSerCon = OltSerCon("C320", ZTEser) # 初始化串口控制类，型号为C320，串口为被选串口
         # Log
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
         LogInput = "Option " + SelectSerial + " has been chosen"
         OltSerCon.LogWrite(LogInput, "\n")
         OltSerCon.LogWrite("Serial detailed parameters:", "\n")
-        OltSerCon.LogWrite(str(ser), "\n")
+        OltSerCon.LogWrite(str(ZTEser), "\n")
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
         # 串口通信
 
         # 串口登录
-        inputdata = "\n"
-        ser.write(inputdata.encode("gbk"))
-        SerRead = ser.readlines(ser.in_waiting)
+        OltSerCon.SerWrite("\n")
+        SerRead = OltSerCon.ReadFormSerial()
         count = 0
         while not IsInList("ZXAN(config)#", SerRead):
             if IsInList("RETURN", SerRead):
-                ser.write("\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
-                LogInput = "<--" + str(SerRead)
-                OltSerCon.LogWrite(LogInput, "\n")
-                OltSerCon.LogWrite(r"-->\n", "\n")
+                OltSerCon.SerWrite("\n")
+                SerRead = OltSerCon.ReadFormSerial()
             elif IsInList("ZXAN>", SerRead):
-                ser.write("enable\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
                 OltSerCon.LogWrite("<--ZXAN>", "\n")
-                OltSerCon.LogWrite("-->enable", "\n")
+                OltSerCon.SerWrite("enable\n")
+                SerRead = OltSerCon.ReadFormSerial()
             elif IsInList("Password:", SerRead):
-                ser.write("zxr10\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
                 OltSerCon.LogWrite("<--Password:", "\n")
-                OltSerCon.LogWrite("-->zxr10", "\n")
+                OltSerCon.SerWrite("zxr10\n")
+                SerRead = OltSerCon.ReadFormSerial()
             elif IsInList("ZXAN#", SerRead):
-                ser.write("config terminal\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
-                OltSerCon.LogWrite("<--ZXAN#", "\n")
-                OltSerCon.LogWrite("-->config terminal", "\n")
+                OltSerCon.SerWrite("config terminal\n")
+                SerRead = OltSerCon.ReadFormSerial()
             elif IsInList("=>", SerRead):
-                ser.write("boot\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
-                OltSerCon.LogWrite("<--=>", "\n")
-                OltSerCon.LogWrite("-->boot", "\n")
+                OltSerCon.SerWrite("boot\n")
+                SerRead = OltSerCon.ReadFormSerial()
             else:
-                ser.write("\n".encode("gbk"))
-                SerRead = ser.readlines(ser.in_waiting)
-                # Log
-                OltSerCon.LogWrite(r"-->\n", "\n")
-                # Log
+                OltSerCon.SerWrite("\n")
+                SerRead = OltSerCon.ReadFormSerial()
                 if count == 0:
                     print('设备正在启动，请稍候')
                     count = 1
@@ -180,66 +179,44 @@ if __name__ == '__main__':
             time.sleep(1)
         print("\r设备登录成功!")
         # Log
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
         OltSerCon.LogWrite("Login succeed!", "\n")
+        OltSerCon.LogWrite("###############SysInfo###############", "\n")
         # 串口登录
 
         # 查询板卡型号、状态
-        PonArr = ['32', '24', '16', '16', '8']  # PON口数量，对应CardList列表
-        PonList = ["16", "16"], \
-                  ["16", "8"], \
-                  ["16"], \
-                  ["8", "8"], \
-                  ["8"]  # PON口数量列表，对应CardList列表中的不同型号板卡
-        CardList = ["1ETGH", "2ETGH", "3PRAM", "4SMXA"], \
-                   ["1ETGH", "2ETGO", "3PRAM", "4SMXA"], \
-                   ["1ETGH", "3PRAM", "4SMXA"], \
-                   ["1ETGO", "2ETGO", "3PRAM", "4SMXA"], \
-                   ["1ETGO", "3PRAM", "4SMXA"]  # 初始化板卡型号列表
         count = 0
         TryTimes = 0
         while True:
-            ser.write("show card\n".encode("gbk"))
-            SerRead = ser.readlines(ser.in_waiting)
-            # Log
-            OltSerCon.LogWrite("-->show card", "\n")
-            OltSerCon.LogWrite("<--", "\n")
-            for i in SerRead:
-                OltSerCon.LogWrite(str(i), "\n")
-            # Log
+            OltSerCon.SerWrite("show card\n")
+            SerRead = OltSerCon.ReadFormSerial()
             CardType = GetCardType(CardList, SerRead)
             if CardType >= 0:
                 print("\r板卡型号获取成功，当前设备PON口数量为:", PonArr[CardType])  # 板卡型号获取成功，开始获取板卡状态
                 # Log
+                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                 LogInput = "CardType is: " + str(CardList[CardType])
                 OltSerCon.LogWrite(LogInput, "\n")
+                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                 # Log
                 count = 0
                 while True:
-                    ser.write("show card\n".encode("gbk"))
-                    SerRead = ser.readlines(ser.in_waiting)
-                    # Log
-                    OltSerCon.LogWrite("-->show card", "\n")
-                    OltSerCon.LogWrite("<--", "\n")
-                    for i in SerRead:
-                        OltSerCon.LogWrite(str(i), "\n")
-                    # Log
+                    OltSerCon.SerWrite("show card\n")
+                    SerRead = OltSerCon.ReadFormSerial()
                     IsCardRdy(SerRead, CardType)
                     if IsCardRdy(SerRead, CardType):  # 板卡进入INSERVICE状态，开始进行配置
                         print("\r板卡启动成功!正在进行配置...")
                         # Log
+                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                         OltSerCon.LogWrite("Card is now in INSERVICE state!", "\n")
+                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                         # Log
                         for i in range(0, len(PonList[CardType])):  # 开启PON口
                             for j in range(1, int(PonList[CardType][i]) + 1):
                                 inputdata = "interface epon-olt_1/" + str(i + 1) + "/" + str(j) + "\n"
-                                ser.write(inputdata.encode("gbk"))
-                                ser.write("no shutdown\n".encode("gbk"))
-                                ser.write("exit\n".encode("gbk"))
-                                # Log
-                                OltSerCon.LogWrite("-->", "")
-                                OltSerCon.Logfile.write(inputdata)
-                                OltSerCon.LogWrite("-->no shutdown", "\n")
-                                OltSerCon.LogWrite("-->exit", "\n")
+                                OltSerCon.SerWrite(inputdata)
+                                OltSerCon.SerWrite("no shutdown\n")
+                                OltSerCon.SerWrite("exit\n")
                                 time.sleep(0.1)
                         # 配置管理VLAN
                         print("请输入管理VLAN:")
@@ -250,28 +227,34 @@ if __name__ == '__main__':
                                 if not 1 <= VLAN <= 4096:
                                     print("错误，请输入正确VLAN号:")
                                     # Log
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     LogInput = str(VLAN) + " is input,it's an illegal VLAN. VLAN has been reset as '0'."
                                     OltSerCon.LogWrite(LogInput, "\n")
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     VLAN = 0
                             except IndexError as e:
                                 print("错误，请输入正确VLAN号:")
                                 # Log
+                                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                 OltSerCon.LogWrite("Wrong Value has been input. VLAN has been reset as '0'.", "\n")
+                                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                 VLAN = 0
                             except ValueError as e:
                                 print("错误，请输入正确VLAN号:")
                                 # Log
+                                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                 OltSerCon.LogWrite("Wrong Value has been input. VLAN has been reset as '0'.", "\n")
+                                OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                 VLAN = 0
-                        inputdata = "vlan " + str(VLAN) + "\n" + "description MNG\nexit\n"
-                        ser.write(inputdata.encode("gbk"))
+                        inputdata = "vlan " + str(VLAN) + "\n"
+                        OltSerCon.SerWrite(inputdata)
+                        OltSerCon.SerWrite("description MNG\n")
+                        OltSerCon.SerWrite("exit\n")
                         # Log
+                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                         LogInput = "Manage VLAN is: " + str(VLAN)
                         OltSerCon.LogWrite(LogInput, "\n")
-                        LogInput = "-->vlan " + str(VLAN)
-                        OltSerCon.LogWrite(LogInput, "\n")
-                        OltSerCon.LogWrite("-->description MNG", "\n")
-                        OltSerCon.LogWrite("-->exit", "\n")
+                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                         # 配置管理IP
                         IP, Mask = '', ''
                         # 正则表达式匹配IP地址、掩码
@@ -287,15 +270,19 @@ if __name__ == '__main__':
                                 if m is None:
                                     print("请输入正确格式的IP地址:")
                                     # Log
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     LogInput = str(IP) + " is input,it's an illegal IP. IP has been reset as None."
                                     OltSerCon.LogWrite(LogInput, "\n")
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     IP = ''
                                 else:
                                     if len(IP) != len(m.group(0)):  # 判断输入的字符串和正则匹配到的是否一致，确保精准匹配
                                         print("请输入正确格式的IP地址:")
                                         # Log
+                                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                         LogInput = str(IP) + " is input,it's an illegal IP. IP has been reset as None."
                                         OltSerCon.LogWrite(LogInput, "\n")
+                                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                         IP = ''
                                     else:
                                         IP = m.group(0)
@@ -309,42 +296,35 @@ if __name__ == '__main__':
                                 if m is None:
                                     print("请输入正确格式的掩码:")
                                     # Log
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     LogInput = str(Mask) + " is input,it's an illegal Mask. Mask has been reset as None."
                                     OltSerCon.LogWrite(LogInput, "\n")
+                                    OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                     Mask = ''
                                 else:
                                     if len(Mask) != len(m.group(0)):  # 判断输入的字符串和正则匹配到的是否一致，确保精准匹配
                                         print("请输入正确格式的掩码:")
                                         # Log
+                                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                         LogInput = str(Mask) + " is input,it's an illegal Mask. Mask has been reset as None."
                                         OltSerCon.LogWrite(LogInput, "\n")
+                                        OltSerCon.LogWrite("###############SysInfo###############", "\n")
                                         Mask = ''
                                     else:
                                         Mask = m.group(0)
                             except Exception as e:
                                 print(e)
                         inputdata = "interface vlan " + str(VLAN) + "\n"
-                        ser.write(inputdata.encode("gbk"))
+                        OltSerCon.SerWrite(inputdata)
                         inputdata = "ip add " + IP + " " + Mask + "\n"
-                        ser.write(inputdata.encode("gbk"))
-                        ser.write("exit\n".encode("gbk"))
-                        # Log
-                        LogInput = "-->interface vlan " + str(VLAN)
-                        OltSerCon.LogWrite(LogInput, "\n")
-                        LogInput = "-->ip add " + IP + " " + Mask
-                        OltSerCon.LogWrite(LogInput, "\n")
-                        OltSerCon.LogWrite("-->exit", "\n")
+                        OltSerCon.SerWrite(inputdata)
+                        OltSerCon.SerWrite("exit\n")
 
                         # 配置用户名密码
-                        ser.write("service password-encryption\n".encode("gbk"))
-                        ser.write("username wasu password wasu@123 privilege 15\n".encode("gbk"))
-                        ser.write("username wasu password wasu@123 max-sessions 16\n".encode("gbk"))
-                        ser.write("no ssh server only\n".encode("gbk"))
-                        # Log
-                        OltSerCon.LogWrite("-->service password-encryption", "\n")
-                        OltSerCon.LogWrite("-->username wasu password wasu@123 privilege 15", "\n")
-                        OltSerCon.LogWrite("-->username wasu password wasu@123 max-sessions 16", "\n")
-                        OltSerCon.LogWrite("-->no ssh server only", "\n")
+                        OltSerCon.SerWrite("service password-encryption\n")
+                        OltSerCon.SerWrite("username wasu password wasu@123 privilege 15\n")
+                        OltSerCon.SerWrite("username wasu password wasu@123 max-sessions 16\n")
+                        OltSerCon.SerWrite("no ssh server only\n")
 
                         # 配置静态路由(此处默认管理IP为24位，如有变动需修改)
                         IPA, IPB, IPC = '', '', ''
@@ -356,27 +336,17 @@ if __name__ == '__main__':
                         IPB = IP[IndexA + 1:IndexB]
                         IPC = IP[IndexB + 1:IndexC]
                         inputdata = "ip route 0.0.0.0 0.0.0.0 " + IPA + '.' + IPB + '.' + IPC + '.' + '254\n'
-                        ser.write(inputdata.encode("gbk"))
-                        # Log
-                        OltSerCon.LogWrite("-->", "")
-                        OltSerCon.Logfile.write(inputdata, "")
+                        OltSerCon.SerWrite(inputdata)
 
                         # 配置上联口
-                        ser.write("interface gei_1/4/1\n".encode("gbk"))
-                        ser.write("no shutdown\n".encode("gbk"))
-                        ser.write("switchport mode trunk\n".encode("gbk"))
+                        OltSerCon.SerWrite("interface gei_1/4/1\n")
+                        OltSerCon.SerWrite("no shutdown\n")
+                        OltSerCon.SerWrite("switchport mode trunk\n")
                         inputdata = "switchport vlan " + str(VLAN) + " tag\n"
-                        ser.write(inputdata.encode("gbk"))
-                        ser.write("exit\nexit\nwrite".encode("gbk"))
-                        # Log
-                        OltSerCon.LogWrite("-->interface gei_1/4/1", "\n")
-                        OltSerCon.LogWrite("-->no shutdown", "\n")
-                        OltSerCon.LogWrite("-->switchport mode trunk", "\n")
-                        OltSerCon.LogWrite("-->", "")
-                        OltSerCon.LogWrite(inputdata, "")
-                        OltSerCon.LogWrite("-->exit", "\n")
-                        OltSerCon.LogWrite("-->exit", "\n")
-                        OltSerCon.LogWrite("-->write", "\n")
+                        OltSerCon.SerWrite(inputdata)
+                        OltSerCon.SerWrite("exit\n")
+                        OltSerCon.SerWrite("exit\n")
+                        OltSerCon.SerWrite("write\n")
                         print("配置完成!")
 
                         OltSerCon.Logfile.close()

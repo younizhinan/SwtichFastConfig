@@ -1,0 +1,7 @@
+C320-2022-05-19_14-38-47:###############SysInfo###############
+C320-2022-05-19_14-38-47:Option 1 has been chosen
+C320-2022-05-19_14-38-47:Serial detailed parameters:
+C320-2022-05-19_14-38-47:Serial<id=0x29e31224670, open=True>(port='COM1 ', baudrate=9600, bytesize=8, parity='N', stopbits=1, timeout=0.5, xonxoff=False, rtscts=False, dsrdtr=False)
+C320-2022-05-19_14-38-47:###############SysInfo###############
+C320-2022-05-19_14-38-47:-->
+C320-2022-05-19_14-38-47:
